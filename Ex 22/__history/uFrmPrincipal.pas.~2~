@@ -1,0 +1,53 @@
+unit uFrmPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    btnExecutar: TButton;
+    procedure btnExecutarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+{22. Faça um algoritmo que receba o preço de custo e o preço de venda
+de 40 produtos. Mostre como resultado se houve lucro, prejuízo ou empate
+para cada produto. Informe o valor de custo de cada produto, o valor de
+venda de cada produto, a média de preço de custo e do preço de venda;}
+
+procedure TForm1.btnExecutarClick(Sender: TObject);
+var
+  I: Integer;
+  xProduto: String;
+  xPrecoCusto: Double;
+  xPrecoVenda: Double;
+  xMedia: Double;
+begin
+  xPrecoCusto := 0;
+  xPrecoVenda := 0;
+  xMedia      := 0;
+
+  for I := 1 to 40 do
+  begin
+    xProduto := (inputbox('Informe','Escreva qual é o produto',''));
+    xPrecoCusto := StrToFloat(inputbox('Informe','Informe o preço de custo do' +
+                                      'produto',''));
+    xPrecoVenda := StrToFloat(inputbox('Informe','Informe o preço de venda do' +
+                                      'produto',''));
+  end;
+end;
+
+end.

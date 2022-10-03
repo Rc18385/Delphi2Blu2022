@@ -1,0 +1,85 @@
+unit uFrmPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    mmResultado: TMemo;
+    btnCalcular: TButton;
+    procedure btnCalcularClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+{20. A concessionária de veículos “CARANGO VELHO” está vendendo
+ os seus veículos com desconto. Faça um algoritmo que calcule
+ e exiba o valor do desconto e o valor a ser pago pelo
+cliente de vários carros. O desconto deverá ser calculado de
+ acordo com o ano do veículo. Até 2000 - 12% e acima de 2000 - 7%.
+  O sistema deverá perguntar se deseja continuar calculando
+desconto até que a resposta seja: “(N) Não”.
+ Informar total de carros com ano até 2000 e total geral;}
+
+procedure TForm1.btnCalcularClick(Sender: TObject);
+var
+  xValorCarro: Double;
+  xAnoCarro: Integer;
+  xResp: String;
+  xDesc7: Double;
+  xDesc12: Double;
+  xValorDesconto: Double;
+  xContadorMaior: Integer;
+  xContadorMenor: Integer;
+begin
+  xDesc7 := 0.07;
+  xDesc12 := 0.12;
+  xContadorMaior := 0;
+  xContadorMenor := 0;
+
+  repeat
+    xValorCarro := StrToFloat(inputbox('Informe','Informe o valor do carro',''));
+    xAnoCarro   := StrToInt(inputbox('Informe','Informe o ano do carro',''));
+
+    if (xAnoCarro < 2000) then
+    begin
+      xValorDesconto := (xValorCarro * xDesc12);
+      xValorCarro    := (xValorCarro - xValorDesconto);
+      xContadorMenor := (xContadorMenor + 1);
+    end
+    else if (xAnoCarro >= 2000) then
+    begin
+      xValorDesconto := (xValorCarro * xDesc7);
+      xValorCarro    := (xValorCarro - xValorDesconto);
+      xContadorMaior := (xContadorMaior + 1);
+    end;
+    mmResultado.Lines.Add('O valor do carro é de: R$ ' + FloatToStr(xValorCarro) +
+                          '.' + #13#10 + 'O valor de desconto é de R$ '
+                         + FloatToStr(xValorDesconto) + '.');
+
+    xResp := inputbox('Informe','Informe se deseja continuar com S ou N','');
+  until (xResp = 'N');
+
+  mmResultado.Lines.Add('O número de carros com ano inferior a 2000 é de ' +
+                        IntToStr(xContadorMenor));
+  mmResultado.Lines.Add('O número de carros com ano superior a 2000 é de ' +
+                        IntToStr(xContadorMaior));
+  mmResultado.Lines.Add('O número de carros total é de ' +
+                        (IntToStr(xContadorMenor) + IntToStr(xContadorMaior)));
+
+end;
+
+end.
+

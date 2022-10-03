@@ -1,0 +1,59 @@
+unit uFrmPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Button1: TButton;
+    mmResultado: TMemo;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+{21. Escreva um algoritmo que leia os dados de “N” pessoas
+(nome, sexo, idade e saúde) e informe se está apta ou não para
+ cumprir o serviço militar obrigatório. Informe os totais;}
+
+procedure TForm1.Button1Click(Sender: TObject);
+var
+  xNome: String;
+  xSexo: String;
+  xIdade: Integer;
+  xSaude: String;
+  xAptos: Integer;
+  xInaptos: Integer;
+begin
+  xIdade := 0;
+  repeat
+      xNome := (inputbox('Informe','Informe o seu nome',''));
+      XSexo := (inputbox('Informe','Informe o seu sexo',''));
+      xIdade := (StrToInt(inputbox('Informe','Informe a sua idade','')));
+      xSaude := (inputbox('Informe','Infomrme o estado de saúde',''));
+
+  if (xSexo = 'M') then
+
+  if (xIdade = 18) then
+
+  if (xSaude = 'Boa') then
+
+
+
+  until ;
+
+end;
+
+end.

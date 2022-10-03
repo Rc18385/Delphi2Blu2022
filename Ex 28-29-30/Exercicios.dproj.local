@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/09/30 20:39:12.000.750,=C:\Users\rafcorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/09/30 20:43:47.000.043,C:\Users\rafcorrea\Desktop\Aulas Delphi\Lista\Ex 28-29-30\uFrmPrincipal.pas=C:\Users\rafcorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/09/30 20:43:47.000.043,C:\Users\rafcorrea\Desktop\Aulas Delphi\Lista\Ex 28-29-30\uFrmPrincipal.dfm=C:\Users\rafcorrea\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2022/09/30 20:48:01.000.050,=C:\Users\rafcorrea\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2022/09/30 20:48:35.000.538,C:\Users\rafcorrea\Desktop\Aulas Delphi\Lista\Ex 28-29-30\Exercicio28.pas=C:\Users\rafcorrea\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2022/09/30 20:48:35.000.538,C:\Users\rafcorrea\Desktop\Aulas Delphi\Lista\Ex 28-29-30\Exercicio28.dfm=C:\Users\rafcorrea\Documents\Embarcadero\Studio\Projects\Unit2.dfm</Transaction>
+    <Transaction>2022/09/30 20:49:16.000.842,C:\Users\rafcorrea\Desktop\Aulas Delphi\Lista\Ex 28-29-30\uExercicio28.dproj=C:\Users\rafcorrea\Documents\Embarcadero\Studio\Projects\Project2.dproj</Transaction>
+    <Transaction>2022/09/30 20:49:33.000.368,=C:\Users\rafcorrea\Desktop\Aulas Delphi\Lista\Ex 28-29-30\Unit3.pas</Transaction>
+    <Transaction>2022/09/30 20:49:54.000.333,C:\Users\rafcorrea\Desktop\Aulas Delphi\Lista\Ex 28-29-30\uExercicio29.pas=C:\Users\rafcorrea\Desktop\Aulas Delphi\Lista\Ex 28-29-30\Unit3.pas</Transaction>
+    <Transaction>2022/09/30 20:49:54.000.333,C:\Users\rafcorrea\Desktop\Aulas Delphi\Lista\Ex 28-29-30\uExercicio29.dfm=C:\Users\rafcorrea\Desktop\Aulas Delphi\Lista\Ex 28-29-30\Unit3.dfm</Transaction>
+    <Transaction>2022/09/30 20:50:05.000.929,C:\Users\rafcorrea\Desktop\Aulas Delphi\Lista\Ex 28-29-30\uExercicio28.dfm=C:\Users\rafcorrea\Desktop\Aulas Delphi\Lista\Ex 28-29-30\Exercicio28.dfm</Transaction>
+    <Transaction>2022/09/30 20:50:05.000.929,C:\Users\rafcorrea\Desktop\Aulas Delphi\Lista\Ex 28-29-30\uExercicio28.pas=C:\Users\rafcorrea\Desktop\Aulas Delphi\Lista\Ex 28-29-30\Exercicio28.pas</Transaction>
+    <Transaction>2022/09/30 20:50:14.000.287,=C:\Users\rafcorrea\Desktop\Aulas Delphi\Lista\Ex 28-29-30\Unit4.pas</Transaction>
+    <Transaction>2022/09/30 20:50:26.000.597,C:\Users\rafcorrea\Desktop\Aulas Delphi\Lista\Ex 28-29-30\uExercicio30.pas=C:\Users\rafcorrea\Desktop\Aulas Delphi\Lista\Ex 28-29-30\Unit4.pas</Transaction>
+    <Transaction>2022/09/30 20:50:26.000.597,C:\Users\rafcorrea\Desktop\Aulas Delphi\Lista\Ex 28-29-30\uExercicio30.dfm=C:\Users\rafcorrea\Desktop\Aulas Delphi\Lista\Ex 28-29-30\Unit4.dfm</Transaction>
+    <Transaction>2022/09/30 20:50:39.000.578,C:\Users\rafcorrea\Desktop\Aulas Delphi\Lista\Ex 28-29-30\Exercicios.dproj=C:\Users\rafcorrea\Desktop\Aulas Delphi\Lista\Ex 28-29-30\uExercicio28.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

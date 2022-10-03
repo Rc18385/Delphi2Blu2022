@@ -1,0 +1,47 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Maior ou Menor de Idade'
+  ClientHeight = 230
+  ClientWidth = 277
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 64
+    Top = 43
+    Width = 148
+    Height = 18
+    Caption = 'Informe a sua idade'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object btnExecutar: TButton
+    Left = 64
+    Top = 88
+    Width = 148
+    Height = 25
+    Caption = 'Executar'
+    TabOrder = 0
+    OnClick = btnExecutarClick
+  end
+  object Memo1: TMemo
+    Left = 32
+    Top = 133
+    Width = 204
+    Height = 89
+    Lines.Strings = (
+      'Memo1')
+    TabOrder = 1
+  end
+end

@@ -1,0 +1,69 @@
+unit uFrmPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Button1: TButton;
+    mmResultado: TMemo;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+{21. Escreva um algoritmo que leia os dados de “N” pessoas
+(nome, sexo, idade e saúde) e informe se está apta ou não para
+ cumprir o serviço militar obrigatório. Informe os totais;}
+
+procedure TForm1.Button1Click(Sender: TObject);
+var
+  xNome: String;
+  xSexo: String;
+  xIdade: Integer;
+  xSaude: String;
+  xAptos: Integer;
+  xInaptos: Integer;
+  xResp: String;
+  xSoma: Integer;
+begin
+  xIdade   := 0;
+  xAptos   := 0;
+  xInaptos := 0;
+  repeat
+      xNome := (inputbox('Informe','Informe o seu nome',''));
+      XSexo := (inputbox('Informe','Informe o seu sexo',''));
+      xIdade := (StrToInt(inputbox('Informe','Informe a sua idade','')));
+      xSaude := (inputbox('Informe','Infomrme o estado de saúde',''));
+
+    if (xSexo = 'M') and (xIdade = 18) and (xSaude = 'Boa')  then
+    begin
+      mmResultado.Lines.Add('Você está apto para o serviço militar obrigatório');
+      xAptos := (xAptos + 1)
+    end
+    else if (xSexo <> 'M') or (xIdade <> 18) or (xSaude <> 'Boa') then
+    begin
+        mmResultado.Lines.Add('Você está inapto para o serviço militar obrigatório');
+        xInaptos := (xInaptos + 1);
+    end;
+    xResp := inputbox('Informe','Informe se deseja continuar com S ou N','');
+  until (xResp = 'N');
+  xSoma := (xAptos + xInaptos);
+  mmResultado.Lines.Add('O total de pessoas que se alistaram é de ' +
+                        IntToStr(xSoma));
+
+end;
+
+end.

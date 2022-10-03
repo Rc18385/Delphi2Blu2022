@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/09/20 21:46:03.000.980,=C:\Users\rafcorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/09/20 21:49:48.000.769,C:\Users\rafcorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\rafcorrea\Desktop\Aulas Delphi\Exercícios 20-09\Ex 3\Ex3.pas</Transaction>
+    <Transaction>2022/09/20 21:49:48.000.769,C:\Users\rafcorrea\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\rafcorrea\Desktop\Aulas Delphi\Exercícios 20-09\Ex 3\Ex3.dfm</Transaction>
+    <Transaction>2022/09/20 21:49:59.000.942,C:\Users\rafcorrea\Documents\Embarcadero\Studio\Projects\Project2.dproj=C:\Users\rafcorrea\Desktop\Aulas Delphi\Exercícios 20-09\Ex 3\ConsumodeCombustivel.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

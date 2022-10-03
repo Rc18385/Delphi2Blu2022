@@ -1,0 +1,20 @@
+program Exercicios;
+
+uses
+  Vcl.Forms,
+  uFrmPrincipal in 'uFrmPrincipal.pas' {Form1},
+  uExercicio28 in 'uExercicio28.pas' {Form2},
+  uExercicio29 in 'uExercicio29.pas' {Form3},
+  uExercicio30 in 'uExercicio30.pas' {Form4};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TForm2, Form2);
+  Application.CreateForm(TForm3, Form3);
+  Application.CreateForm(TForm4, Form4);
+  Application.Run;
+end.

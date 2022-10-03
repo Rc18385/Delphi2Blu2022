@@ -1,0 +1,90 @@
+unit uFrmPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    btnExecutar: TButton;
+    mmResultado: TMemo;
+    btnLimpar: TButton;
+    procedure btnExecutarClick(Sender: TObject);
+    procedure btnLimparClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+{22. Faça um algoritmo que receba o preço de custo e o preço de venda
+de 40 produtos. Mostre como resultado se houve lucro, prejuízo ou empate
+para cada produto. Informe o valor de custo de cada produto, o valor de
+venda de cada produto, a média de preço de custo e do preço de venda;}
+
+procedure TForm1.btnExecutarClick(Sender: TObject);
+var
+  I: Integer;
+  xProduto: String;
+  xPrecoCusto: Double;
+  xPrecoVenda: Double;
+  xMediaCusto: Double;
+  xMediaVenda: Double;
+  xSomaPrecoCusto: Double;
+  xSomaPrecoVenda: Double;
+  xQuantProd: Integer;
+begin
+  xPrecoCusto := 0;
+  xPrecoVenda := 0;
+  xMediaCusto := 0;
+  xMediaVenda := 0;
+  xQuantProd  := 0;
+
+  xQuantProd  := StrToInt(inputbox('Informe','Informe a quantidade de produtos',''));
+  for I := 1 to (xQuantProd) do
+  begin
+    xProduto    := (inputbox('Informe','Escreva qual é o produto',''));
+    xPrecoCusto := StrToFloat(inputbox('Informe','Informe o preço de custo do ' +
+                                      'produto',''));
+    xPrecoVenda := StrToFloat(inputbox('Informe','Informe o preço de venda do ' +
+                                      'produto',''));
+
+    if (xPrecoVenda > xPrecoCusto) then
+      mmResultado.Lines.Add('O ' + (xProduto) + ' gerou lucro')
+    else if (xPrecoVenda = xPrecoCusto) then
+      mmResultado.Lines.Add('O ' + (xProduto) + ' não gerou lucro')
+    else if (xPrecoVenda < xPrecoCusto) then
+      mmResultado.Lines.Add('O ' + (xProduto) + ' gerou prejuízo')
+
+  end;
+  xSomaPrecoCusto := (xPrecoCusto + xPrecoCusto);
+  xSomaPrecoVenda := (xPrecoVenda + xPrecoVenda);
+  xMediaCusto := (xSomaPrecoCusto / xQuantProd);
+  xMediaVenda := (xSomaPrecoVenda / xQuantProd);
+  mmResultado.Lines.Add('O ' + (xProduto) + ' tem o seguinte preço de custo R$ ' +
+                        FloatToStr(xPrecoCusto) + ' e o seguinte preço de venda R$ ' +
+                        FloatToStr(xPrecoVenda));
+  mmResultado.Lines.Add('O ' + (xProduto) + ' teve um total de ' +
+                        FloatToStr(xQuantProd) + ' vendas.');
+  mmResultado.Lines.Add('O preço médio de venda do produto é de ' +
+                      FloatToStr(xMediaVenda));
+  mmResultado.Lines.Add('O preço médio de custo do produto é de ' +
+                      FloatToStr(xMediaCusto));
+
+end;
+
+procedure TForm1.btnLimparClick(Sender: TObject);
+begin
+  mmResultado.Lines.Clear;
+end;
+
+end.
