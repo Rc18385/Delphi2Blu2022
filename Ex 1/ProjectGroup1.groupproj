@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{C7533E69-F0EA-4C38-84AD-22A969148831}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Soma.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\Tipos de Dados\TipodeDados.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Soma">
+        <MSBuild Projects="Soma.dproj"/>
+    </Target>
+    <Target Name="Soma:Clean">
+        <MSBuild Projects="Soma.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Soma:Make">
+        <MSBuild Projects="Soma.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TipodeDados">
+        <MSBuild Projects="..\..\Tipos de Dados\TipodeDados.dproj"/>
+    </Target>
+    <Target Name="TipodeDados:Clean">
+        <MSBuild Projects="..\..\Tipos de Dados\TipodeDados.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TipodeDados:Make">
+        <MSBuild Projects="..\..\Tipos de Dados\TipodeDados.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Soma;TipodeDados"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Soma:Clean;TipodeDados:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Soma:Make;TipodeDados:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
