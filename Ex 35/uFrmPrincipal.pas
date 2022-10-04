@@ -8,12 +8,14 @@ uses
 
 type
   TCliente = (Residencia, Comercio, Industria, Fazenda);
+  TDesconto = (Sim, Nao);
   TForm1 = class(TForm)
     TeditConsumo: TEdit;
     Label2: TLabel;
     btnCalcular: TButton;
     mmResultado: TMemo;
     RadioGroup1: TRadioGroup;
+    RadioDesconto: TRadioGroup;
     procedure btnCalcularClick(Sender: TObject);
   private
     { Private declarations }
@@ -48,35 +50,49 @@ procedure TForm1.Calculos;
 var
   xValor:      Double;
   xConta:      Double;
+  xDesconto:   Double;
 begin
   xValor   := StrToFloat(TeditConsumo.Text);
   xConta   := 0;
+
+  case TDesconto(RadioDesconto.ItemIndex) of
+    Sim:
+      xDesconto:= StrToFloat(InputBox('Informar','Digite o valor do desconto',''));
+    Nao:
+      xDesconto:= 0;
+    else
+      showMessage('Informe se possui descontos');
+  end;
 
   case TCliente(RadioGroup1.ItemIndex) of
 
    Residencia:
    begin
-    xConta := xValor * 0.60 ;
+    xConta := xValor * 0.60 - xDesconto;
     AtualizarMemo(xConta);
    end;
 
    Comercio:
    begin
-    xConta := Xvalor * 0.48;
+    xConta := Xvalor * 0.48 - xDesconto;
     AtualizarMemo(xConta);
    end;
 
    Industria:
    begin
-    xConta := xValor * 1.29;
+    xConta := xValor * 1.29 - xDesconto;
     AtualizarMemo(xConta);
    end;
 
    Fazenda:
    begin
-    xConta := xValor * 2.18;
+    xConta := xValor * 2.18 - xDesconto;
     AtualizarMemo(xConta);
    end;
+
+   else
+    showMessage('Informe o Tipo de cliente');
+
   end;
 end;
 
