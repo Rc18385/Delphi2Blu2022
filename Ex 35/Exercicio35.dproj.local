@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
-  <Transactions>
-    <Transaction>2022/10/03 21:03:56.178,=C:\Users\rafcorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2022/10/03 21:07:21.093,C:\Users\rafcorrea\Desktop\Aulas Delphi\Lista\Ex 35\uFrmPrincipal.dfm=C:\Users\rafcorrea\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
-    <Transaction>2022/10/03 21:07:21.093,C:\Users\rafcorrea\Desktop\Aulas Delphi\Lista\Ex 35\uFrmPrincipal.pas=C:\Users\rafcorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2022/10/03 21:07:29.554,C:\Users\rafcorrea\Desktop\Aulas Delphi\Lista\Ex 35\Exercicio35.dproj=C:\Users\rafcorrea\Documents\Embarcadero\Studio\Projects\Project2.dproj</Transaction>
+	<Transactions>
+    <Transaction>2022/10/03 21:03:56.000.178,=C:\Users\rafcorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/10/03 21:07:21.000.093,C:\Users\rafcorrea\Desktop\Aulas Delphi\Lista\Ex 35\uFrmPrincipal.dfm=C:\Users\rafcorrea\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2022/10/03 21:07:21.000.093,C:\Users\rafcorrea\Desktop\Aulas Delphi\Lista\Ex 35\uFrmPrincipal.pas=C:\Users\rafcorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/10/03 21:07:29.000.554,C:\Users\rafcorrea\Desktop\Aulas Delphi\Lista\Ex 35\Exercicio35.dproj=C:\Users\rafcorrea\Documents\Embarcadero\Studio\Projects\Project2.dproj</Transaction>
   </Transactions>
 </BorlandProject>

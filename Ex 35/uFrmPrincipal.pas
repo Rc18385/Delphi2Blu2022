@@ -7,18 +7,20 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
 
 type
-  TCliente = (Residencia, Comercio, Industria);
+  TCliente = (Residencia, Comercio, Industria, Fazenda);
+  TDesconto = (Sim, Nao);
   TForm1 = class(TForm)
     TeditConsumo: TEdit;
     Label2: TLabel;
     btnCalcular: TButton;
     mmResultado: TMemo;
     RadioGroup1: TRadioGroup;
-    btnLimpar: TButton;
+    RadioDesconto: TRadioGroup;
     procedure btnCalcularClick(Sender: TObject);
-    procedure btnLimparClick(Sender: TObject);
   private
     { Private declarations }
+    procedure AtualizarMemo(const pConta: double);
+    procedure Calculos;
   public
     { Public declarations }
   end;
@@ -38,46 +40,65 @@ b. (Comércio) 0,48;
 c. (Indústria) 1,29.}
 
 
-procedure TForm1.btnCalcularClick(Sender: TObject);
+procedure TForm1.AtualizarMemo(const pConta : Double);
+begin
+  mmResultado.Lines.Clear;
+  mmResultado.Lines.Add('Sua conta do mês deu R$:' + FormatFloat('0.00', pConta));
+end;
+
+procedure TForm1.Calculos;
 var
   xValor:      Double;
   xConta:      Double;
-  xResidencia: Double;
-  xComercio:   Double;
-  xIndustria:  Double;
+  xDesconto:   Double;
 begin
   xValor   := StrToFloat(TeditConsumo.Text);
   xConta   := 0;
-  xResidencia := 0.60;
-  xComercio   := 0.48;
-  xIndustria  := 1.29;
 
-  case TCliente(RadioGroup1.ItemIndex) of
-   Residencia:
-   begin
-    xConta := (xValor * xResidencia);
-    mmResultado.Lines.Add('O valor da fatura de energia da residência é de R$ ' +
-                          FloatToStr(xConta));
-   end;
-   Comercio:
-   begin
-    xConta := (Xvalor * xComercio);
-    mmResultado.Lines.Add('O valor da fatura de energia do comércio é de R$ ' +
-                          FloatToStr(xConta));
-   end;
-   Industria:
-   begin
-    xConta := (xValor * xIndustria);
-    mmResultado.Lines.Add('O valor da fatura de energia da industria é de R$ ' +
-                          FloatToStr(xconta));
-   end;
+  case TDesconto(RadioDesconto.ItemIndex) of
+    Sim:
+      xDesconto:= StrToFloat(InputBox('Informar','Digite o valor do desconto',''));
+    Nao:
+      xDesconto:= 0;
+    else
+      showMessage('Informe se possui descontos');
   end;
 
+  case TCliente(RadioGroup1.ItemIndex) of
+
+   Residencia:
+   begin
+    xConta := xValor * 0.60 - xDesconto;
+    AtualizarMemo(xConta);
+   end;
+
+   Comercio:
+   begin
+    xConta := Xvalor * 0.48 - xDesconto;
+    AtualizarMemo(xConta);
+   end;
+
+   Industria:
+   begin
+    xConta := xValor * 1.29 - xDesconto;
+    AtualizarMemo(xConta);
+   end;
+
+   Fazenda:
+   begin
+    xConta := xValor * 2.18 - xDesconto;
+    AtualizarMemo(xConta);
+   end;
+
+   else
+    showMessage('Informe o Tipo de cliente');
+
+  end;
 end;
-procedure TForm1.btnLimparClick(Sender: TObject);
+
+procedure TForm1.btnCalcularClick(Sender: TObject);
 begin
-  TeditConsumo.Text:= '';
-  mmResultado.Lines.Clear
+  Calculos;
 end;
 
 end.

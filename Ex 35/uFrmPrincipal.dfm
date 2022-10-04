@@ -2,7 +2,7 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 447
+  ClientHeight = 433
   ClientWidth = 273
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -36,7 +36,7 @@ object Form1: TForm1
   end
   object btnCalcular: TButton
     Left = 82
-    Top = 241
+    Top = 311
     Width = 113
     Height = 25
     Caption = 'Calcular'
@@ -45,30 +45,35 @@ object Form1: TForm1
   end
   object mmResultado: TMemo
     Left = 48
-    Top = 296
+    Top = 342
     Width = 185
-    Height = 105
+    Height = 83
+    Alignment = taCenter
     TabOrder = 2
   end
   object RadioGroup1: TRadioGroup
     Left = 82
-    Top = 112
+    Top = 95
     Width = 113
-    Height = 105
+    Height = 140
     Caption = 'Escolha uma op'#231#227'o:'
     Items.Strings = (
       'Resid'#234'ncia'
       'Com'#233'rcio'
-      'Ind'#250'stria')
+      'Ind'#250'stria'
+      'Fazenda')
     TabOrder = 3
   end
-  object btnLimpar: TButton
-    Left = 82
-    Top = 414
-    Width = 113
-    Height = 25
-    Caption = 'Limpar'
+  object RadioDesconto: TRadioGroup
+    Left = 66
+    Top = 241
+    Width = 147
+    Height = 64
+    Caption = 'Possui Descontos na conta?'
+    Columns = 2
+    Items.Strings = (
+      'Sim'
+      'N'#227'o')
     TabOrder = 4
-    OnClick = btnLimparClick
   end
 end
