@@ -45,30 +45,23 @@ object Form1: TForm1
   end
   object mmResultado: TMemo
     Left = 48
-    Top = 296
+    Top = 288
     Width = 185
     Height = 105
+    Alignment = taCenter
     TabOrder = 2
   end
   object RadioGroup1: TRadioGroup
     Left = 82
-    Top = 112
+    Top = 95
     Width = 113
-    Height = 105
+    Height = 140
     Caption = 'Escolha uma op'#231#227'o:'
     Items.Strings = (
       'Resid'#234'ncia'
       'Com'#233'rcio'
-      'Ind'#250'stria')
+      'Ind'#250'stria'
+      'Fazenda')
     TabOrder = 3
-  end
-  object btnLimpar: TButton
-    Left = 82
-    Top = 414
-    Width = 113
-    Height = 25
-    Caption = 'Limpar'
-    TabOrder = 4
-    OnClick = btnLimparClick
   end
 end
