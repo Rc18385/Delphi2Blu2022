@@ -68,25 +68,25 @@ begin
 
    Residencia:
    begin
-    xConta := xValor * 0.60 - xDesconto;
+    xConta := xValor * 0.80 - xDesconto;
     AtualizarMemo(xConta);
    end;
 
    Comercio:
    begin
-    xConta := Xvalor * 0.48 - xDesconto;
+    xConta := Xvalor * 0.68 - xDesconto;
     AtualizarMemo(xConta);
    end;
 
    Industria:
    begin
-    xConta := xValor * 1.29 - xDesconto;
+    xConta := xValor * 1.49 - xDesconto;
     AtualizarMemo(xConta);
    end;
 
    Fazenda:
    begin
-    xConta := xValor * 2.18 - xDesconto;
+    xConta := xValor * 3.18 - xDesconto;
     AtualizarMemo(xConta);
    end;
 
