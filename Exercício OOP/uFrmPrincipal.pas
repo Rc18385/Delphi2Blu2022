@@ -28,9 +28,11 @@ type
     LabelY: TLabel;
     LabelResultado: TLabel;
     procedure btnCalcularClick(Sender: TObject);
+    procedure btnCalcularOOPClick(Sender: TObject);
   private
     { Private declarations }
-    Procedure Triangulos;
+    procedure Triangulos;
+    procedure CalcularAreasOOP;
   public
     { Public declarations }
   end;
@@ -39,6 +41,9 @@ var
   Form1: TForm1;
 
 implementation
+
+uses
+  uTriangulo;
 
 {$R *.dfm}
 
@@ -50,8 +55,8 @@ var
   xY1:        Double;
   xY2:        Double;
   xY3:        Double;
-  xArea1:     Double;
-  xArea2:     Double;
+  xAreaX:     Double;
+  xAreaY:     Double;
   xPerimetroX: Double;
   xPerimetroY: Double;
 begin
@@ -64,15 +69,15 @@ begin
   xY3 := StrToFloat(edtY3.Text);
 
   xPerimetroX := (xX1+xX2+xX3) / 2;
-  xArea1      := Sqrt(xPerimetroX * (xPerimetroX-xX1) * (xPerimetroX-xX2) * (xPerimetroX-xX3));
+  xAreaX      := Sqrt(xPerimetroX * (xPerimetroX-xX1) * (xPerimetroX-xX2) * (xPerimetroX-xX3));
 
   xPerimetroY := (xY1+xY2+xY3) / 2;
-  xArea2      := Sqrt(xPerimetroY * (xPerimetroY-xY1) * (xPerimetroY-xY2) * (xPerimetroY-xY3));
+  xAreaY      := Sqrt(xPerimetroY * (xPerimetroY-xY1) * (xPerimetroY-xY2) * (xPerimetroY-xY3));
 
-  LabelX.Caption := ('Área X = ') + FormatFloat('0.0000',xArea1);
-  LabelY.Caption := ('Área Y = ') + FormatFloat('0.0000',xArea2);
+  LabelX.Caption := ('Área X = ') + FormatFloat('0.0000',xAreaX);
+  LabelY.Caption := ('Área Y = ') + FormatFloat('0.0000',xAreaY);
 
-  if (xArea1 > xArea2) then
+  if (xAreaX > xAreaY) then
     LabelResultado.Caption := ('Triangulo X é maior')
   else
     LabelResultado.Caption := ('Triangulo Y é maior')
@@ -81,6 +86,51 @@ end;
 procedure TForm1.btnCalcularClick(Sender: TObject);
 begin
   Triangulos;
+end;
+
+
+procedure TForm1.btnCalcularOOPClick(Sender: TObject);
+begin
+  CalcularAreasOOP;
+end;
+
+procedure TForm1.CalcularAreasOOP;
+var
+  xTrianguloX: TTriangulo;
+  xTrianguloY: TTriangulo;
+
+  xAreaX: Double;
+  xAreaY: Double;
+begin
+  xTrianguloX := TTriangulo.Create;
+  xTrianguloY := TTriangulo.Create;
+
+  try
+      //Priemiro Triangulo
+      xTrianguloX.a := StrToFloatDef(edtX1.Text,0);
+      xTrianguloX.b := StrToFloatDef(edtX2.Text,0);
+      xTrianguloX.c := StrToFloatDef(edtX3.Text,0);
+
+      xAreaX := xTrianguloX.Area;
+
+      //Segundo Triangulo
+       xTrianguloY.a := StrToFloatDef(edtY1.Text,0);
+       xTrianguloY.b := StrToFloatDef(edtY2.Text,0);
+       xTrianguloY.c := StrToFloatDef(edtY3.Text,0);
+
+       XAreaY := xTrianguloY.Area;
+
+       LabelX.Caption := 'Triangulo x Área: ' + FormatFloat('0.00', xAreaX);
+       LabelY.Caption := 'Triangulo y Área: ' + FormatFloat('0.00', xAreaY);
+
+       if (xAreaX > xAreaY) then
+        LabelResultado.Caption := 'A área do triangulo X é maior.'
+       else
+        LabelResultado.Caption := 'A área do triangulo Y é maior.';
+  finally
+    FreeAndNil(xTrianguloX);
+    FreeAndNil(xTrianguloY);
+  end;
 end;
 
 end.
